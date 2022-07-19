@@ -11,10 +11,10 @@ export default function App() {
         </div>
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
-            <h2 className="mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-5xl sm:leading-none">
-              Marvel Film
+            <h2 className="mb-6 font-sans text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              Marvel Film & Series
             </h2>
-            <p className="mb-6 text-base font-thin tracking-wide text-gray-300 md:text-lg">
+            {/* <p className="mb-6 text-base font-thin tracking-wide text-gray-300 md:text-lg">
               Kumpulan film marvel
             </p>
             <form className="flex flex-col items-center w-full mb-4 md:flex-row md:px-16">
@@ -24,7 +24,7 @@ export default function App() {
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
                 <path d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z" />
               </svg>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
