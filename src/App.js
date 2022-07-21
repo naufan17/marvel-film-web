@@ -1,4 +1,5 @@
 import React from 'react';
+import List from './List.js'
 import Content from './Content.js'
 import Main from './Main.js'
 
@@ -7,7 +8,8 @@ class App extends React.Component{
     return (
       <div>
       <Main/>
-      <Content/>
+      <List/>
+      {/* <Content/> */}
       </div>
     )
   }
