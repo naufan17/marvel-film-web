@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/marvel-film-web/static/css/main.b83b635e.css",
-    "main.js": "/marvel-film-web/static/js/main.01d26094.js",
+    "main.css": "/marvel-film-web/static/css/main.1bcbb9e5.css",
+    "main.js": "/marvel-film-web/static/js/main.d672c893.js",
     "static/js/787.6e5ad328.chunk.js": "/marvel-film-web/static/js/787.6e5ad328.chunk.js",
     "index.html": "/marvel-film-web/index.html",
-    "main.b83b635e.css.map": "/marvel-film-web/static/css/main.b83b635e.css.map",
-    "main.01d26094.js.map": "/marvel-film-web/static/js/main.01d26094.js.map",
+    "main.1bcbb9e5.css.map": "/marvel-film-web/static/css/main.1bcbb9e5.css.map",
+    "main.d672c893.js.map": "/marvel-film-web/static/js/main.d672c893.js.map",
     "787.6e5ad328.chunk.js.map": "/marvel-film-web/static/js/787.6e5ad328.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b83b635e.css",
-    "static/js/main.01d26094.js"
+    "static/css/main.1bcbb9e5.css",
+    "static/js/main.d672c893.js"
   ]
 }
