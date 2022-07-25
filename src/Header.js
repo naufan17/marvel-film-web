@@ -1,5 +1,6 @@
-import React from 'react';export default function Main() {
+import React from 'react';
 
+export default function Header() {
     return (
         <div className="relative bg-red-700">
             <div className="absolute inset-x-0 bottom-0">

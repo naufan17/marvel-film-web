@@ -1,15 +1,13 @@
 import React from 'react';
-import List from './List.js'
-// import Content from './Content.js'
-import Main from './Main.js'
+import Content from './Content.js'
+import Header from './Header.js'
 
 class App extends React.Component{
   render (){
     return (
       <div>
-      <Main/>
-      <List/>
-      {/* <Content/> */}
+      <Header/>
+      <Content/>
       </div>
     )
   }
