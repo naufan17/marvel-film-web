@@ -4,14 +4,17 @@ import axios from 'axios';
 export default function Content(){
     const [movies, setMovies] = useState([]);
 
+    const getMovies = async () => {
+        try{
+            const result = await axios.get('https://marvel-film-api.herokuapp.com/api/movies/Captain%20Marvel')
+            setMovies(result.data.data);
+        }catch(e){
+            console.log(e.message);
+        }
+    }
+
     useEffect(() => {
-        axios.get('https://marvel-film-api.herokuapp.com/api/movies/Captain%20Marvel')
-        .then(res => {
-            setMovies(res.data.data);
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
+        getMovies();
     }, []);
 
     return(
