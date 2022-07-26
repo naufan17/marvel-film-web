@@ -47,6 +47,85 @@ export default function Content(){
     }else if(isLoading === false){
         return(
             <>
+            <div id="detail">
+                {detailMovies.map(movie => 
+                    <div className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-8 mt-12">
+                        <div className="grid gap-5 row-gap-10 lg:grid-cols-2">
+                            <div className="flex flex-col justify-center">
+                                <div className="max-w-xl mb-6">
+                                    <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+                                        {movie.title} ({movie.year})
+                                    </h2>
+                                    <p className="text-base text-gray-700 md:text-lg">
+                                        {movie.plot}
+                                    </p>
+                                </div>
+                                <a href={movie.torrent} className="inline-flex mb-6 items-center text-gray-700 font-bold cursor-pointer">Download</a>
+                                <p className="mb-4 text-md font-bold">
+                                    Detail
+                                </p>
+                                <div className="grid space-y-3 sm:gap-2 sm:grid-cols-2 sm:space-y-0">
+                                    <ul className="space-y-3">
+                                        <li className="flex">
+                                            <span className="mr-1">
+                                                <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                                                <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
+                                                </svg>
+                                            </span>
+                                                Released: {movie.released}
+                                            </li>
+                                        <li className="flex">
+                                            <span className="mr-1">
+                                                <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                                                <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
+                                                </svg>
+                                            </span>
+                                            Runtime {movie.runtime}
+                                        </li>
+                                        <li className="flex">
+                                            <span className="mr-1">
+                                                <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                                                <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
+                                                </svg>
+                                            </span>
+                                            Genre : {movie.genre}
+                                        </li>
+                                        <li className="flex">
+                                            <span className="mr-1">
+                                                <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                                                <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
+                                                </svg>
+                                            </span>
+                                            Directors : {movie.director}
+                                        </li>
+                                    </ul>
+                                    <ul className="space-y-3">
+                                        <li className="flex">
+                                            <span className="mr-1">
+                                                <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                                                <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
+                                                </svg>
+                                            </span>
+                                            Writers : {movie.writer}
+                                        </li>
+                                        <li className="flex">
+                                            <span className="mr-1">
+                                                <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                                                <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
+                                                </svg>
+                                            </span>
+                                            Actor : {movie.actors}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <iframe className="object-cover w-full h-56 rounded shadow-lg sm:h-96" src="https://www.youtube.com/embed?v=iH_Tuu4YS1s"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">  
                 <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:max-w-sm sm:mx-auto md:max-w-full lg:max-w-full"> 
                     {movies.map(movie => 
@@ -59,84 +138,11 @@ export default function Content(){
                                 <p className="text-base text-gray-700 md:text-md">
                                     {movie.plot}
                                 </p>
-                                <a href="#detail" onClick={() => getDetailMovies(movie.title)} className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 cursor-pointer">Learn more</a>
+                                <a href="#detail" onClick={() => getDetailMovies(movie.id)} className="inline-flex items-center font-semibold cursor-pointer">Learn more</a>
                             </div>
                         </div>
                     )}
                 </div>
-            </div>
-            <div id="detail">
-                {detailMovies.map(movie => 
-                    <div className="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-8 mb-16">
-                        <div className="grid gap-5 row-gap-10 lg:grid-cols-2">
-                            <div className="flex flex-col justify-center">
-                                <div className="max-w-xl mb-6">
-                                    <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                                        {movie.title} ({movie.year})
-                                    </h2>
-                                    <p className="text-base text-gray-700 md:text-lg">
-                                        {movie.plot}
-                                    </p>
-                                </div>
-                                <p className="mb-4 text-sm font-bold tracking-widest uppercase">
-                                    Detail
-                                </p>
-                                <div className="grid space-y-3 sm:gap-2 sm:grid-cols-2 sm:space-y-0">
-                                    <ul className="space-y-3">
-                                        <li className="flex">
-                                        <span className="mr-1">
-                                            <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                                            <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
-                                            </svg>
-                                        </span>
-                                            Released: {movie.released}
-                                        </li>
-                                        <li className="flex">
-                                        <span className="mr-1">
-                                            <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                                            <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
-                                            </svg>
-                                        </span>
-                                        Runtime {movie.runtime}</li>
-                                        <li className="flex">
-                                        <span className="mr-1">
-                                            <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                                            <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
-                                            </svg>
-                                        </span>
-                                        Genre : {movie.genre}</li>
-                                        <li className="flex">
-                                        <span className="mr-1">
-                                            <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                                            <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
-                                            </svg>
-                                        </span>
-                                        Directors : {movie.director}</li>
-                                    </ul>
-                                    <ul className="space-y-3">
-                                        <li className="flex">
-                                        <span className="mr-1">
-                                            <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                                            <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
-                                            </svg>
-                                        </span>
-                                        Writers : {movie.writer}</li>
-                                        <li className="flex">
-                                        <span className="mr-1">
-                                            <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                                            <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
-                                            </svg>
-                                        </span>
-                                        Actor : {movie.actors}</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div>
-                                <iframe className="object-cover w-full h-56 rounded shadow-lg sm:h-96" src="https://www.youtube.com/embed?v=iH_Tuu4YS1s"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                )}
             </div>
             </>
         )
