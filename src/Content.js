@@ -54,15 +54,15 @@ export default function Content(){
                         <div className="grid gap-5 row-gap-10 lg:grid-cols-2">
                             <div className="flex flex-col justify-center">
                                 <div className="max-w-xl mb-6">
-                                    <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+                                    <h2 className="max-w-lg mb-6 font-sans text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 sm:leading-none">
                                         {movie.title} ({movie.year})
                                     </h2>
-                                    <p className="text-base text-gray-700 md:text-lg">
+                                    <p className="text-gray-700 text-md sm:text-lg">
                                         {movie.plot}
                                     </p>
                                 </div>
-                                <a href={movie.torrent} className="inline-flex mb-6 items-center text-gray-700 font-bold cursor-pointer">Download</a>
-                                <p className="mb-4 text-md font-bold">
+                                <a href={movie.torrent} className="inline-flex mb-6 items-center text-md sm:text-lg text-gray-700 font-bold cursor-pointer">Download</a>
+                                <p className="mb-4 text-md sm:text-lg font-bold">
                                     Detail
                                 </p>
                                 <div className="grid space-y-3 sm:gap-2 sm:grid-cols-2 sm:space-y-0">
@@ -128,18 +128,18 @@ export default function Content(){
                 )}
             </div>
             <div className="animate__animated animate__fadeInUp px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">  
-                <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:max-w-sm sm:mx-auto md:max-w-full lg:max-w-full"> 
+                <div className="grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:max-w-sm sm:mx-auto md:max-w-full lg:max-w-full"> 
                     {movies.map(movie => 
                         <div className="overflow-hidden transform transition-shadow duration-1000 bg-white border rounded hover:-translate-y-2">
                             <img src={movie.poster} className="object-cover w-full h-auto" alt=""/>
                             <div className="p-5">
-                                <h3 className="inline-block mb-3 text-xl font-semibold">
+                                <h3 className="inline-block mb-3 text-lg sm:text-xl font-semibold">
                                     {movie.title} ({movie.year})
                                 </h3>
-                                <p className="text-base text-gray-700 md:text-md">
+                                <p className="text-sm text-gray-700 sm:text-md">
                                     {movie.plot}
                                 </p>
-                                <a href="#detail" onClick={() => getDetailMovies(movie.id)} className="inline-flex items-center font-semibold cursor-pointer">Learn more</a>
+                                <a href="#detail" onClick={() => getDetailMovies(movie.id)} className="inline-flex items-center text-sm sm:text-md font-semibold cursor-pointer">Learn more</a>
                             </div>
                         </div>
                     )}
