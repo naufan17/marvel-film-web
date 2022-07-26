@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import 'animate.css';
 
 export default function Content(){
     const [movies, setMovies] = useState([]);
@@ -49,7 +50,7 @@ export default function Content(){
             <>
             <div id="detail">
                 {detailMovies.map(movie => 
-                    <div className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-8 mt-12">
+                    <div className="animate__animated animate__fadeIn px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-8 mt-1">
                         <div className="grid gap-5 row-gap-10 lg:grid-cols-2">
                             <div className="flex flex-col justify-center">
                                 <div className="max-w-xl mb-6">
@@ -126,7 +127,7 @@ export default function Content(){
                     </div>
                 )}
             </div>
-            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">  
+            <div className="animate__animated animate__fadeInUp px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">  
                 <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:max-w-sm sm:mx-auto md:max-w-full lg:max-w-full"> 
                     {movies.map(movie => 
                         <div className="overflow-hidden transform transition-shadow duration-1000 bg-white border rounded hover:-translate-y-2">
