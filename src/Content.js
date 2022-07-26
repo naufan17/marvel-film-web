@@ -61,21 +61,21 @@ export default function Content(){
                                         {movie.plot}
                                     </p>
                                 </div>
-                                <a href={movie.torrent} className="inline-flex mb-6 items-center text-md sm:text-lg text-gray-700 font-bold cursor-pointer">Download</a>
-                                <p className="mb-4 text-md sm:text-lg font-bold">
+                                <a href={movie.torrent} className="inline-flex mb-6 items-center text-md sm:text-base text-gray-700 font-bold cursor-pointer">Download</a>
+                                <p className="mb-4 text-md sm:text-base font-bold">
                                     Detail
                                 </p>
                                 <div className="grid space-y-3 sm:gap-2 sm:grid-cols-2 sm:space-y-0">
-                                    <ul className="space-y-3">
-                                        <li className="flex">
+                                    <ul className="space-y-3 list-disc">
+                                        <li className="flex text-sm sm:text-base">
                                             <span className="mr-1">
                                                 <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
                                                 <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
                                                 </svg>
                                             </span>
-                                                Released: {movie.released}
-                                            </li>
-                                        <li className="flex">
+                                            Released: {movie.released}
+                                        </li>
+                                        <li className="flex text-sm sm:text-base">
                                             <span className="mr-1">
                                                 <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
                                                 <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
@@ -83,7 +83,7 @@ export default function Content(){
                                             </span>
                                             Runtime {movie.runtime}
                                         </li>
-                                        <li className="flex">
+                                        <li className="flex text-sm sm:text-base">
                                             <span className="mr-1">
                                                 <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
                                                 <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
@@ -91,7 +91,7 @@ export default function Content(){
                                             </span>
                                             Genre : {movie.genre}
                                         </li>
-                                        <li className="flex">
+                                        <li className="flex text-sm sm:text-base">
                                             <span className="mr-1">
                                                 <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
                                                 <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
@@ -101,7 +101,7 @@ export default function Content(){
                                         </li>
                                     </ul>
                                     <ul className="space-y-3">
-                                        <li className="flex">
+                                        <li className="flex text-sm sm:text-base">
                                             <span className="mr-1">
                                                 <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
                                                 <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
@@ -109,7 +109,7 @@ export default function Content(){
                                             </span>
                                             Writers : {movie.writer}
                                         </li>
-                                        <li className="flex">
+                                        <li className="flex text-sm sm:text-base">
                                             <span className="mr-1">
                                                 <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
                                                 <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
@@ -136,10 +136,10 @@ export default function Content(){
                                 <h3 className="inline-block mb-3 text-lg sm:text-xl font-semibold">
                                     {movie.title} ({movie.year})
                                 </h3>
-                                <p className="text-sm text-gray-700 sm:text-md">
+                                <p className="text-sm text-gray-700 sm:text-base">
                                     {movie.plot}
                                 </p>
-                                <a href="#detail" onClick={() => getDetailMovies(movie.id)} className="inline-flex items-center text-sm sm:text-md font-semibold cursor-pointer">Learn more</a>
+                                <a href="#detail" onClick={() => getDetailMovies(movie.id)} className="inline-flex items-center text-sm sm:text-base font-semibold cursor-pointer">Learn more</a>
                             </div>
                         </div>
                     )}
