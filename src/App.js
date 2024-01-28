@@ -1,16 +1,16 @@
 import React from 'react';
-import Content from './Content.js'
-import Header from './Header.js'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-class App extends React.Component{
-  render (){
-    return (
-      <div>
-      <Header/>
-      <Content/>
-      </div>
-    )
-  }
+import Home from "./pages/Home";
+import Movie from "./pages/Movie";
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" Component={Home}/>
+        <Route path="movie/:id" Component={Movie}/>
+      </Routes>
+    </Router>
+  );
 }
-
-export default App;
