@@ -53,7 +53,7 @@ export default function Content(){
                                 title = {movie.title}
                                 year = {movie.year}
                                 plot = {movie.plot}
-                                url = {'movie'}
+                                url = {'marvel-film-web'}
                             />
                         )}
                     </div>

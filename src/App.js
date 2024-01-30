@@ -8,8 +8,8 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="movie" Component={Home}/>
-        <Route path="movie/:id" Component={Movie}/>
+        <Route path="marvel-film-web" Component={Home}/>
+        <Route path="marvel-film-web/:id" Component={Movie}/>
       </Routes>
     </Router>
   );
