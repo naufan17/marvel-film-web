@@ -6,48 +6,55 @@ import Movie from './Movie'
 
 export default function Content(){
     const [movies, setMovies] = useState([]);
-    const [isLoading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
+    const [loading, setLoading] = useState(true);
     const [hasMore, setHasMore] = useState(true);
 
     const getMovies = async () => {
         try{
             const result = await axios.get(`http://127.0.0.1:8000/api/movies?page=${page}`);
-            setMovies(prevMovies => [...prevMovies, ...result.data.data.data]);
+            setMovies(prevMovies => {
+                if (page === 1) {
+                    return result.data.data.data;
+                } else {
+                    return [...prevMovies, ...result.data.data.data];
+                }
+            });
+            setHasMore(result.data.data.next_page_url !== null);
             setLoading(false);
-            setHasMore(result.data.data.next !== null);
         }catch(e){
-            console.log(e.message);
             setLoading(false);
+            console.log(e.message);
         }
     }
 
     useEffect(() => {
-        getMovies();
+        if(hasMore){
+            getMovies();
+        }
     }, [page]);
 
     const handleScroll = () => {
-        if (!isLoading && hasMore) {
-            if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
-                setPage(prevPage => prevPage + 1);
-            }
+        if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
+            setPage(prevPage => prevPage + 1);
         }
     };
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [handleScroll]);
+    }, []);
     
     return (
         <div>
-            {isLoading ? (
+            {loading ? (
                 <Loading/>
             ) : (
                 <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">  
                     <div className="grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:max-w-sm sm:mx-auto md:max-w-full lg:max-w-full"> 
                         {movies.map(movie => 
                             <Movie
+                                key = {movie.id}
                                 id = {movie.id}
                                 poster = {movie.poster}
                                 title = {movie.title}
@@ -57,8 +64,7 @@ export default function Content(){
                             />
                         )}
                     </div>
-                    {isLoading && <Loading/>}
-                    {!isLoading && !hasMore && <div>No more movies to load.</div>}
+                    {hasMore && <Loading/>}
                 </div>
             )}
         </div>

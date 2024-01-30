@@ -39,9 +39,6 @@ export default function Content({id}){
                                 </p>
                             </div>
                             <a href={movies.torrent} className="inline-flex mb-6 items-center text-md sm:text-base text-gray-700 font-bold cursor-pointer">Download</a>
-                            <p className="mb-4 text-md sm:text-base font-bold">
-                                Detail
-                            </p>
                             <div className="grid space-y-3 sm:gap-2 sm:grid-cols-2 sm:space-y-0">
                                 <ul className="space-y-3 list-disc">
                                     <li className="flex text-sm sm:text-base">
