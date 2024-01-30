@@ -8,7 +8,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" Component={Home}/>
+        <Route path="movie" Component={Home}/>
         <Route path="movie/:id" Component={Movie}/>
       </Routes>
     </Router>
