@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Loading() {
     return (
-        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">  
+        <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">  
             <div className="text-center">
                 <div role="status">
                     <svg className="inline mr-2 w-12 h-12 text-gray-200 animate-spin dark:text-gray-300 fill-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
