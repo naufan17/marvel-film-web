@@ -31,7 +31,7 @@ export default function Content({id}){
                     <div className="grid gap-5 row-gap-10 lg:grid-cols-2">
                         <div className="flex flex-col justify-center">
                             <div className="max-w-xl mb-6">
-                                <h2 className="max-w-lg mb-6 font-sans text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 sm:leading-none">
+                                <h2 className="max-w-lg mb-6 text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 sm:leading-none">
                                     {movies.title} ({movies.year})
                                 </h2>
                                 <p className="text-gray-700 text-md sm:text-lg">

@@ -2,27 +2,16 @@ import { React, useState } from 'react';
 import axios from 'axios';
 
 export default function Main() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [access_token, setAccessToken] = useState('');
+    const [year, setYear] = useState('');
+    const [trailer, setTrailer] = useState('');
+    const [torrent, setTorrent] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const getToken = async () => {
-        try {
-            await axios.get('http://127.0.0.1:8000/sanctum/csrf-cookie', {
-                withCredentials: true,
-            });
-        } catch(e) {
-            console.log(e);
-        }
-    }
-
-    const getUser = async () => {
+    const postMovie = async () => {
         try{
-            const result = await axios.post('http://127.0.0.1:8000/api/login', { email, password }, {
+            await axios.post('http://127.0.0.1:8000/api/movies', { year, trailer, torrent }, {
                 withCredentials: true,
             });
-            setAccessToken(result.data.access_token);
         }catch(e){
             console.log(e);
         }
@@ -31,8 +20,7 @@ export default function Main() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        getToken();
-        getUser();
+        postMovie();
     }
 
     return (
@@ -40,22 +28,28 @@ export default function Main() {
             <div className="flex flex-col px-4 py-4 items-center justify-center">
                 <div className="w-full sm:max-w-lg border-2 rounded-lg shadow-lg p-8 sm:p-10">
                     <h3 className="mb-6 text-2xl font-semibold text-center">
-                        Login
+                        Movie
                     </h3>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-2">
-                            <label htmlFor="email" className="inline-block mb-1 font-medium">
-                                E-mail
+                            <label htmlFor="year" className="inline-block mb-1 font-medium">
+                                Year
                             </label>
-                            <input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 border-2 rounded-lg focus:border-slate-300" required/>
+                            <input type="text" id="year" name="year" value={year} onChange={(e) => setYear(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 border-2 rounded-lg focus:outline-none focus:border-slate-300" required/>
                         </div>
                         <div className="mb-2">
-                            <label htmlFor="password" className="inline-block mb-1 font-medium">
-                                Password
+                            <label htmlFor="trailer" className="inline-block mb-1 font-medium">
+                                Trailer
                             </label>
-                            <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 border-2 rounded-lg focus:border-slate-300" required/>
+                            <textarea type="text" id="trailer" name="trailer" value={trailer} onChange={(e) => setTrailer(e.target.value)} rows="4" className="flex-grow w-full h-12 px-4 py-2 mb-2 border-2 rounded-lg focus:outline-none focus:border-slate-300" required></textarea>
                         </div>
-                        <div className="mt-4 mb-4">
+                        <div className="mb-2">
+                            <label htmlFor="torrent" className="inline-block mb-1 font-medium">
+                                Torrent
+                            </label>
+                            <textarea type="text" id="torrent" name="torrent" value={torrent} onChange={(e) => setTorrent(e.target.value)} rows="4"  className="flex-grow w-full h-12 px-4 py-2 mb-2 border-2 rounded-lg focus:outline-none focus:border-slate-300" required></textarea>
+                        </div>
+                        <div className="mt-4">
                             <button type="submit" className="inline-flex items-center justify-center w-full h-12 px-6 font-medium rounded-lg bg-slate-200 hover:bg-slate-300">
                                 {loading ? (
                                    <svg className="inline w-7 h-7 text-slate-200 animate-spin dark:text-slate-300 fill-slate-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,7 +58,7 @@ export default function Main() {
                                    </svg>
                                 ):(
                                     <>                                
-                                        Login
+                                        Submit
                                     </>
                                 )}
                             </button>
