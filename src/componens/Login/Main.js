@@ -8,16 +8,14 @@ export default function Main() {
     const [loading, setLoading] = useState(false);
 
     const getToken = async () => {
-        try {
-            await axios.get('http://127.0.0.1:8000/sanctum/csrf-cookie', {
-                withCredentials: true,
-            });
-        } catch(e) {
-            console.log(e);
-        }
+        await axios.get('http://127.0.0.1:8000/sanctum/csrf-cookie', {
+            withCredentials: true,
+        });
     }
 
     const getUser = async () => {
+        await getToken();
+
         try{
             const result = await axios.post('http://127.0.0.1:8000/api/login', { email, password }, {
                 withCredentials: true,
@@ -31,7 +29,6 @@ export default function Main() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        getToken();
         getUser();
     }
 
@@ -47,15 +44,15 @@ export default function Main() {
                             <label htmlFor="email" className="inline-block mb-1 font-medium">
                                 E-mail
                             </label>
-                            <input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 border-2 rounded-lg focus:border-slate-300" required/>
+                            <input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 border-2 rounded-lg focus:outline-none focus:border-slate-300" required/>
                         </div>
                         <div className="mb-2">
                             <label htmlFor="password" className="inline-block mb-1 font-medium">
                                 Password
                             </label>
-                            <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 border-2 rounded-lg focus:border-slate-300" required/>
+                            <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 border-2 rounded-lg focus:outline-none focus:border-slate-300" required/>
                         </div>
-                        <div className="mt-4 mb-4">
+                        <div className="mt-4">
                             <button type="submit" className="inline-flex items-center justify-center w-full h-12 px-6 font-medium rounded-lg bg-slate-200 hover:bg-slate-300">
                                 {loading ? (
                                    <svg className="inline w-7 h-7 text-slate-200 animate-spin dark:text-slate-300 fill-slate-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

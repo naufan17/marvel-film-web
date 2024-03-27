@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Header() {
+export default function Header({title}) {
     return (
         <div className="relative bg-red-700">
             <div className="absolute inset-x-0 bottom-0">
@@ -9,11 +9,13 @@ export default function Header() {
                 </svg>
             </div>
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-                <div className="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
-                    <h2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-5xl">
-                        Marvel Film & Series
-                    </h2>
-                </div>
+                {title && (
+                    <div className="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
+                        <h2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-5xl">
+                            {title}
+                        </h2>
+                    </div>
+                )}
             </div>
         </div>
     );

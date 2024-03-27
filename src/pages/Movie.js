@@ -1,7 +1,7 @@
 import { React } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Header from '../componens/Movie/Header';
+import Header from '../componens/Header';
 import Main from '../componens/Movie/Main';
 
 export default function Movie() {    
@@ -10,9 +10,7 @@ export default function Movie() {
     return (
         <>
             <Header/> 
-            <Main
-                id = {id}
-            />
+            <Main id = {id} />
         </>
     );
 }

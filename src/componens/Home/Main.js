@@ -1,6 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import axios from 'axios';
-
+import Movies from '../../services/Movies';
 import Loading from '../Loading'
 import Movie from './Card'
 
@@ -12,15 +11,15 @@ export default function Content(){
 
     const getMovies = async () => {
         try{
-            const result = await axios.get(`http://127.0.0.1:8000/api/movies?page=${page}`);
+            const result = await Movies(page);
             setMovies(prevMovies => {
                 if (page === 1) {
-                    return result.data.data.data;
+                    return result.data;
                 } else {
-                    return [...prevMovies, ...result.data.data.data];
+                    return [...prevMovies, ...result.data];
                 }
             });
-            setHasMore(result.data.data.next_page_url !== null);
+            setHasMore(result.next_page_url !== null);
             setLoading(false);
         }catch(e){
             setLoading(false);

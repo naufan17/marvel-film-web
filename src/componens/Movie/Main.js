@@ -1,6 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import axios from 'axios';
-
+import Movie from '../../services/Movie';
 import Loading from '../Loading'
 
 export default function Content({id}){
@@ -9,8 +8,8 @@ export default function Content({id}){
 
     const getMovies = async () => {
         try{
-            const result = await axios.get(`http://127.0.0.1:8000/api/movies/${id}`);
-            setMovies(result.data.data);
+            const result = await Movie(id);
+            setMovies(result);
             setLoading(false);
         }catch(e){
             console.log(e.message);
@@ -20,7 +19,7 @@ export default function Content({id}){
 
     useEffect(() => {
         getMovies();
-    }, []);
+    }, [id]);
 
     return (
         <div>
@@ -95,7 +94,7 @@ export default function Content({id}){
                             </div>
                         </div>
                         <div>
-                            <iframe className="object-cover w-full h-56 rounded shadow-lg sm:h-96" src={movies.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            <iframe className="object-cover w-full h-56 rounded-lg shadow-lg sm:h-96" src={movies.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         </div>
                     </div>
                 </div>
