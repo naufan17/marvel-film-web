@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import Movie from '../../services/Movie';
+import axios from '../../config/Api';
 import Loading from '../Loading'
 
 export default function Content({id}){
@@ -8,8 +8,8 @@ export default function Content({id}){
 
     const getMovies = async () => {
         try{
-            const result = await Movie(id);
-            setMovies(result);
+            const result = await axios.get(`/movies/${id}`);
+            setMovies(result.data.data);
             setLoading(false);
         }catch(e){
             console.log(e.message);
