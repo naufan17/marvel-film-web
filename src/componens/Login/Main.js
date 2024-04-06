@@ -1,5 +1,6 @@
 import { React, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import axios from '../../config/Api';
 
 export default function Main() {
     const [email, setEmail] = useState('');
@@ -8,18 +9,14 @@ export default function Main() {
     const [loading, setLoading] = useState(false);
 
     const getToken = async () => {
-        await axios.get('http://127.0.0.1:8000/sanctum/csrf-cookie', {
-            withCredentials: true,
-        });
+        await axios.get('/sanctum/csrf-cookie');
     }
 
     const getUser = async () => {
         await getToken();
 
         try{
-            const result = await axios.post('http://127.0.0.1:8000/api/login', { email, password }, {
-                withCredentials: true,
-            });
+            const result = await axios.post('/api/login', { email, password });
             setAccessToken(result.data.access_token);
         }catch(e){
             console.log(e);

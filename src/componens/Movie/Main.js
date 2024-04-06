@@ -8,7 +8,7 @@ export default function Content({id}){
 
     const getMovies = async () => {
         try{
-            const result = await axios.get(`/movies/${id}`);
+            const result = await axios.get(`/api/movies/${id}`);
             setMovies(result.data.data);
             setLoading(false);
         }catch(e){

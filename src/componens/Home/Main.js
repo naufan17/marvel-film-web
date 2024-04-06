@@ -11,7 +11,7 @@ export default function Content(){
 
     const getMovies = async () => {
         try{
-            const result = await axios.get(`/movies?page=${page}`);
+            const result = await axios.get(`/api/movies?page=${page}`);
             setMovies(prevMovies => {
                 if (page === 1) {
                     return result.data.data.data;
