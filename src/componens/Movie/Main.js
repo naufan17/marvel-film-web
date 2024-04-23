@@ -1,10 +1,12 @@
 import { React, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from '../../config/Api';
 import Loading from '../Loading'
 
 export default function Content({id}){
     const [movies, setMovies] = useState([]);
     const [isLoading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     const getMovies = async () => {
         try{
@@ -14,6 +16,7 @@ export default function Content({id}){
         }catch(e){
             console.log(e.message);
             setLoading(false);
+            navigate('/404');
         }
     }
 
@@ -29,44 +32,48 @@ export default function Content({id}){
                 <div className="relative px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-8">
                     <div className="grid gap-5 row-gap-10 lg:grid-cols-2">
                         <div className="flex flex-col justify-center">
-                            <div className="max-w-xl mb-6">
-                                <h2 className="max-w-lg mb-6 text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 sm:leading-none">
+                            <div className="mb-6">
+                                <h2 className="max-w-lg mb-6 text-2xl sm:text-3xl font-bold tracking-tight text-gray-800 sm:leading-none">
                                     {movies.title} ({movies.year})
                                 </h2>
-                                <p className="text-gray-700 text-md sm:text-lg">
+                                <p className="text-gray-600 text-md sm:text-lg">
                                     {movies.plot}
                                 </p>
                             </div>
-                            <a href={movies.torrent} className="inline-flex mb-6 items-center text-md sm:text-base text-gray-700 font-bold cursor-pointer">Download</a>
+                            <div className="w-36 sm:w-48 mb-6">
+                                <a href={movies.torrent} className="inline-flex items-center justify-center w-full h-10 sm:h-12 px-4 sm:px-6 text-sm sm:text-base font-medium rounded-lg text-gray-800 bg-slate-200 hover:bg-slate-300">
+                                    Download
+                                </a>
+                            </div>
                             <div className="grid space-y-3 sm:gap-2 sm:grid-cols-2 sm:space-y-0">
                                 <ul className="space-y-3 list-disc">
-                                    <li className="flex text-sm sm:text-base">
+                                    <li className="flex text-sm text-gray-800 sm:text-base">
                                         <span className="mr-1">
-                                            <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                                            <svg className="w-5 h-5 mt-px text-gray-800" stroke="currentColor" viewBox="0 0 52 52">
                                                 <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
                                             </svg>
                                         </span>
                                         Released: {movies.released}
                                     </li>
-                                    <li className="flex text-sm sm:text-base">
+                                    <li className="flex text-sm text-gray-800 sm:text-base">
                                         <span className="mr-1">
-                                            <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                                            <svg className="w-5 h-5 mt-px text-gray-800" stroke="currentColor" viewBox="0 0 52 52">
                                                 <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
                                             </svg>
                                         </span>
                                         Runtime {movies.runtime}
                                     </li>
-                                    <li className="flex text-sm sm:text-base">
+                                    <li className="flex text-sm text-gray-800 sm:text-base">
                                         <span className="mr-1">
-                                            <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                                            <svg className="w-5 h-5 mt-px text-gray-800" stroke="currentColor" viewBox="0 0 52 52">
                                                 <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
                                             </svg>
                                         </span>
                                         Genre : {movies.genre}
                                     </li>
-                                    <li className="flex text-sm sm:text-base">
+                                    <li className="flex text-sm text-gray-800 sm:text-base">
                                         <span className="mr-1">
-                                            <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                                            <svg className="w-5 h-5 mt-px text-gray-800" stroke="currentColor" viewBox="0 0 52 52">
                                                 <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
                                             </svg>
                                         </span>
@@ -74,17 +81,17 @@ export default function Content({id}){
                                     </li>
                                 </ul>
                                 <ul className="space-y-3">
-                                    <li className="flex text-sm sm:text-base">
+                                    <li className="flex text-sm text-gray-800 sm:text-base">
                                         <span className="mr-1">
-                                            <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                                            <svg className="w-5 h-5 mt-px text-gray-800" stroke="currentColor" viewBox="0 0 52 52">
                                                 <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
                                             </svg>
                                         </span>
                                         Writers : {movies.writer}
                                     </li>
-                                    <li className="flex text-sm sm:text-base">
+                                    <li className="flex text-sm text-gray-800 sm:text-base">
                                         <span className="mr-1">
-                                            <svg className="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                                            <svg className="w-5 h-5 mt-px text-gray-800" stroke="currentColor" viewBox="0 0 52 52">
                                                 <polygon strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"/>
                                             </svg>
                                         </span>

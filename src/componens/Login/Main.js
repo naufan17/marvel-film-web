@@ -18,7 +18,7 @@ export default function Main() {
         try{
             const result = await axios.post('/api/login', { email, password });
             localStorage.setItem('token', result.data.access_token);
-            navigate('/marvel-film-web/create-movie');
+            navigate('/marvel-film-web/dashboard');
         }catch(e){
             console.log(e);
         }
@@ -39,19 +39,19 @@ export default function Main() {
                     </h3>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-2">
-                            <label htmlFor="email" className="inline-block mb-1 font-medium">
+                            <label htmlFor="email" className="inline-block mb-1 font-medium text-gray-800">
                                 E-mail
                             </label>
                             <input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 border-2 rounded-lg focus:outline-none focus:border-slate-300" required/>
                         </div>
                         <div className="mb-2">
-                            <label htmlFor="password" className="inline-block mb-1 font-medium">
+                            <label htmlFor="password" className="inline-block mb-1 font-medium text-gray-800">
                                 Password
                             </label>
                             <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 border-2 rounded-lg focus:outline-none focus:border-slate-300" required/>
                         </div>
                         <div className="mt-4">
-                            <button type="submit" className="inline-flex items-center justify-center w-full h-12 px-6 font-medium rounded-lg bg-slate-200 hover:bg-slate-300">
+                            <button type="submit" className="inline-flex items-center justify-center w-full h-12 px-6 font-medium rounded-lg text-gray-800 bg-slate-200 hover:bg-slate-300">
                                 {loading ? (
                                    <svg className="inline w-7 h-7 text-slate-200 animate-spin dark:text-slate-300 fill-slate-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                                        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>

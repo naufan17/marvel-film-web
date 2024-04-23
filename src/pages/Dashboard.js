@@ -1,13 +1,13 @@
 import { React } from 'react';
 
 import Header from '../componens/Header';
-import Main from '../componens/CreateMovie/Main';
+import Main from '../componens/Dashboard/Main';
 
-export default function CreateMovie() {      
+export default function Dashboard() {      
     return (
         <>
             <Header/> 
-            <Main/> 
+            <Main/>
         </>
     );
 }
