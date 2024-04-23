@@ -6,7 +6,7 @@ import Main from '../componens/Home/Main';
 export default function Home() {      
     return (
         <>
-            <Header title={'Marvel Film & Series'} /> 
+            <Header title = {'Marvel Film & Series'} /> 
             <Main/>
         </>
     );

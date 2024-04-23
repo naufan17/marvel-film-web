@@ -10,7 +10,7 @@ export default function Movie() {
     return (
         <>
             <Header/> 
-            <Main id = {id} />
+            <Main id = {id}/>
         </>
     );
 }

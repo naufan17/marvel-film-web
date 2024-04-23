@@ -1,12 +1,12 @@
 import { React, useState } from 'react';
-// import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import axios from '../../config/Api';
 
 export default function Main() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [access_token, setAccessToken] = useState('');
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     const getToken = async () => {
         await axios.get('/sanctum/csrf-cookie');
@@ -17,7 +17,8 @@ export default function Main() {
 
         try{
             const result = await axios.post('/api/login', { email, password });
-            setAccessToken(result.data.access_token);
+            localStorage.setItem('token', result.data.access_token);
+            navigate('/marvel-film-web/create-movie');
         }catch(e){
             console.log(e);
         }

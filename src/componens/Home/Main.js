@@ -16,10 +16,10 @@ export default function Content(){
                 if (page === 1) {
                     return result.data.data.data;
                 } else {
-                    return [...prevMovies, ...result.data];
+                    return [...prevMovies, ...result.data.data.data];
                 }
             });
-            setHasMore(result.next_page_url !== null);
+            setHasMore(result.data.data.next_page_url !== null);
             setLoading(false);
         }catch(e){
             setLoading(false);
