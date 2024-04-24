@@ -59,7 +59,7 @@ export default function Content(){
                     <div className="flex flex-row mb-4 md:mb-8 justify-between">
                         <div className="flex">
                             <h2 className="max-w-md font-sans text-2xl font-bold text-gray-800 sm:text-4xl">
-                                Movies Data
+                                Dashboard
                             </h2>
                         </div>
                         <div className="flex">
@@ -71,19 +71,19 @@ export default function Content(){
                     <table className="w-full">
                         <thead>
                             <tr>
-                                <th className="px-6 py-4 bg-gray-100 font-medium font-sans text-left text-gray-800 tracking-wider">
+                                <th className="px-6 py-4 bg-slate-200 font-medium font-sans text-left text-gray-800 tracking-wider">
                                     Id
                                 </th>
-                                <th className="px-6 py-4 bg-gray-100 font-medium font-sans text-left text-gray-800 tracking-wider">
+                                <th className="px-6 py-4 bg-slate-200 font-medium font-sans text-left text-gray-800 tracking-wider">
                                     Title
                                 </th>
-                                <th className="px-6 py-4 bg-gray-100 font-medium font-sans text-left text-gray-800 tracking-wider">
+                                <th className="px-6 py-4 bg-slate-200 font-medium font-sans text-left text-gray-800 tracking-wider">
                                     Year
                                 </th>
-                                <th className="px-6 py-4 bg-gray-100"></th>
+                                <th className="px-6 py-4 bg-slate-200"></th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-gray-200">
+                        <tbody className="divide-y divide-slate-200">
                             {movies.map(movie => 
                                 <List
                                     key = {movie.id}

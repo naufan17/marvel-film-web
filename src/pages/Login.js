@@ -6,7 +6,7 @@ import Main from '../componens/Login/Main';
 export default function Login() {      
     return (
         <>
-            <Header/> 
+            <Header title="Login"/> 
             <Main/> 
         </>
     );
