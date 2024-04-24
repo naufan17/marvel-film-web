@@ -1,12 +1,12 @@
 import { React } from 'react';
 
 import Header from '../componens/Header';
-import Main from '../componens/Form/Main';
+import Main from '../componens/Form/Movie/Main';
 
-export default function Form() {      
+export default function NewData() {      
     return (
         <>
-            <Header/> 
+            <Header title="New Data"/> 
             <Main/> 
         </>
     );

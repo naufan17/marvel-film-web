@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from 'react';
+
 import axios from '../../config/Api';
 import Loading from '../Loading'
 import List from './List'
@@ -43,12 +44,6 @@ export default function Content(){
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    const data = [
-        { id: 1, name: 'John Doe', email: 'john@example.com' },
-        { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
-        { id: 3, name: 'Alice Johnson', email: 'alice@example.com' },
-    ];
     
     return (
         <div>

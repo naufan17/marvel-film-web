@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from '../../config/Api';
+
+import axios from '../../../config/Api';
 
 export default function Main() {
     const [email, setEmail] = useState('');

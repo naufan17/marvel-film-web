@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import axios from 'axios';
 
-export default function Main() {
+export default function Main({id}) {
     const [year, setYear] = useState('');
     const [trailer, setTrailer] = useState('');
     const [torrent, setTorrent] = useState('');
@@ -9,7 +9,7 @@ export default function Main() {
 
     const postMovie = async () => {
         try{
-            await axios.post('http://127.0.0.1:8000/api/movies', { year, trailer, torrent }, {
+            await axios.post('api/movies', { year, trailer, torrent }, {
                 withCredentials: true,
             });
         }catch(e){
@@ -24,12 +24,9 @@ export default function Main() {
     }
 
     return (
-        <div className="relative mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">  
+        <div className="relative mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
             <div className="flex flex-col px-4 py-4 items-center justify-center">
-                <div className="w-full sm:max-w-lg border-2 rounded-lg shadow-lg p-8 sm:p-10">
-                    <h3 className="mb-6 text-2xl font-semibold text-center">
-                        Movie
-                    </h3>
+                <div className="w-full sm:max-w-lg">
                     <form onSubmit={handleSubmit}>
                         <div className="mb-2">
                             <label htmlFor="year" className="inline-block mb-1 font-medium">
