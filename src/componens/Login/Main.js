@@ -55,13 +55,13 @@ export default function Main() {
                             <label htmlFor="email" className="inline-block mb-1 font-medium text-sm sm:text-base text-gray-800">
                                 E-mail
                             </label>
-                            <input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 border-2 rounded-lg focus:outline-none focus:border-slate-300" required/>
+                            <input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 text-sm sm:text-base border-2 rounded-lg focus:outline-none focus:border-slate-300" required/>
                         </div>
                         <div className="mb-2">
                             <label htmlFor="password" className="inline-block mb-1 font-medium text-sm sm:text-base text-gray-800">
                                 Password
                             </label>
-                            <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 border-2 rounded-lg focus:outline-none focus:border-slate-300" required/>
+                            <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} className="flex-grow w-full h-12 px-4 mb-2 text-sm sm:text-base border-2 rounded-lg focus:outline-none focus:border-slate-300" required/>
                         </div>
                         <div className="mt-4">
                             <button type="submit" className="inline-flex items-center justify-center w-full h-12 px-6 font-medium rounded-lg text-sm sm:text-base text-gray-800 bg-slate-200 hover:bg-slate-300">

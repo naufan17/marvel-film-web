@@ -63,7 +63,7 @@ export default function Content(){
                             </h2>
                         </div>
                         <div className="flex">
-                            <a href="/marvel-film-web/create" className="inline-flex items-center justify-center w-full h-12 px-6 font-medium rounded-lg text-gray-800 bg-slate-200 hover:bg-slate-300">
+                            <a href="/marvel-film-web/create" className="inline-flex items-center justify-center w-full h-10 sm:h-12 px-4 sm:px-6 font-medium rounded-lg text-sm sm:text-base text-gray-800 bg-slate-200 hover:bg-slate-300">
                                 New
                             </a>
                         </div>
@@ -71,16 +71,16 @@ export default function Content(){
                     <table className="w-full">
                         <thead>
                             <tr>
-                                <th className="px-6 py-4 bg-slate-200 font-medium font-sans text-left text-gray-800 tracking-wider">
+                                <th className="px-4 sm:px-6 py-3 sm:py-4 bg-slate-200 font-medium font-sans text-left text-sm sm:text-base text-gray-800 tracking-wider">
                                     Id
                                 </th>
-                                <th className="px-6 py-4 bg-slate-200 font-medium font-sans text-left text-gray-800 tracking-wider">
+                                <th className="px-4 sm:px-6 py-3 sm:py-4 bg-slate-200 font-medium font-sans text-left text-sm sm:text-base text-gray-800 tracking-wider">
                                     Title
                                 </th>
-                                <th className="px-6 py-4 bg-slate-200 font-medium font-sans text-left text-gray-800 tracking-wider">
+                                <th className="px-4 sm:px-6 py-3 sm:py-4 bg-slate-200 font-medium font-sans text-left text-sm sm:text-base text-gray-800 tracking-wider">
                                     Year
                                 </th>
-                                <th className="px-6 py-4 bg-slate-200"></th>
+                                <th className="px-4 sm:px-6 py-3 sm:py-4 bg-slate-200"></th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-200">
