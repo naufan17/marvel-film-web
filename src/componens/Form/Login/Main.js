@@ -14,7 +14,7 @@ export default function Main() {
         await axios.get('/sanctum/csrf-cookie');
     }
 
-    const getUser = async () => {
+    const loginUser = async () => {
         await getToken();
 
         try{
@@ -22,6 +22,7 @@ export default function Main() {
             localStorage.setItem('token', result.data.access_token);
             navigate('/marvel-film-web/dashboard');
         }catch(e){
+            console.log(e);
             setLoading(false);
             setAlert(true);
         }
@@ -34,7 +35,7 @@ export default function Main() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        getUser();
+        loginUser();
     }
 
     return (
