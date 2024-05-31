@@ -1,6 +1,5 @@
 import { React, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import axios from '../../../config/Api';
 
 export default function Main() {
@@ -19,7 +18,7 @@ export default function Main() {
 
         try{
             const result = await axios.post('/api/login', { email, password });
-            localStorage.setItem('token', result.data.access_token);
+            sessionStorage.setItem('token', result.data.access_token);
             navigate('/marvel-film-web/dashboard');
         }catch(e){
             console.log(e);

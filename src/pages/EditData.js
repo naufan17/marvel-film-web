@@ -1,6 +1,5 @@
 import { React } from 'react';
 import { useParams } from 'react-router-dom';
-
 import Header from '../componens/Header';
 import Main from '../componens/Form/Movie/Main';
 

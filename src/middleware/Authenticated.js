@@ -1,5 +1,5 @@
 const Authenticated = () => {
-    const accessToken = localStorage.getItem('token');
+    const accessToken = sessionStorage.getItem('token');
     return !!accessToken;
 };
 

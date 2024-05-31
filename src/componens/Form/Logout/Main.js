@@ -1,11 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../middleware/AuthProvider';
-
-import axios from '../../config/Api';
+import axios from '../../../config/Api';
 
 export default function Main() {
-    const { logout } = useAuth();
     const navigate = useNavigate();
 
     const logoutUser = async () => {
@@ -13,7 +10,7 @@ export default function Main() {
             await axios.post('/api/logout', {
                 withCredentials: true,
             });
-            logout();
+            sessionStorage.removeItem('token');
             navigate('/marvel-film-web/login');
         }catch(e){
             console.log(e);
@@ -21,8 +18,8 @@ export default function Main() {
     }
 
     useEffect(() => {
-        logoutUser();
-    })
+        logoutUser()
+    }, [])
 
     return null;
 }
