@@ -1,17 +1,12 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axiosInstance from '../config/Api';
+import { useAuth } from '../context/UseAuth'
 
 const Logout: React.FC = () => {
-  const navigate = useNavigate();
+  const { logout } = useAuth();
 
   const logoutUser = async () => {
     try{
-      await axiosInstance.post('/api/logout', {
-      withCredentials: true,
-      });
-      sessionStorage.removeItem('token');
-      navigate('/marvel-film-web/login');
+      await logout();
     }catch(e){
       console.log(e);
     }

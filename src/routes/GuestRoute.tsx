@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
-import { useAuth } from './AuthProvider';
+import { useAuth } from '../context/UseAuth';
 
 interface GuestRouteProps {
   children: ReactNode;

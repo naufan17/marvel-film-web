@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../config/Api';
-import Loading from '../components/ui/Loading'
-import List from '../components/ui/List'
-
-interface Movie {
-  id: string;
-  title: string;
-  year: number;
-}
+import Header from '../components/layout/Header';
+import Loading from '../components/ui/Loading';
+import List from '../components/ui/List';
+import { Movie } from '../interfaces/Movie';
 
 const Dashboard: React.FC = () => {
   const [movies, setMovies] = useState<Movie []>([]);
   const [page, setPage] = useState<number>(1);
-  const [loading, setLoading] = useState<boolean>(true);
   const [hasMore, setHasMore] = useState<boolean>(true);
 
   const getMovies = async () => {
@@ -26,9 +21,8 @@ const Dashboard: React.FC = () => {
         }
       });
       setHasMore(result.data.next_page_url !== null);
-      setLoading(false);
     }catch(e){
-      setLoading(false);
+      throw new Error('Data failed to be fetched')
     }
   }
 
@@ -51,9 +45,8 @@ const Dashboard: React.FC = () => {
 
   return (
     <div>
-      {loading ? (
-        <Loading/>
-      ) : (
+      <Header title="Dashboard"/>
+      {movies ? (
         <div className="relative px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-8"> 
           <div className="flex flex-row mb-4 md:mb-8 justify-between">
             <div className="flex">
@@ -94,6 +87,8 @@ const Dashboard: React.FC = () => {
           </table> 
           {hasMore && <Loading/>}
         </div>
+        ) : (
+          <Loading/>        
       )}
     </div>
   );

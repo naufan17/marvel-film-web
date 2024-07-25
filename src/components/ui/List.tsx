@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ListProps {
-  id: string;
+  id: number;
   title: string;
   year: number;
 }

@@ -3,33 +3,18 @@ import { useParams } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Loading from '../components/ui/Loading';
 import axiosInstance from '../config/Api';
-
-interface DetailMovie {
-  title: string;
-  year: number;
-  plot: string;
-  torrent: string;
-  released: string;
-  runtime: string;
-  genre: string;
-  director: string;
-  writer: string;
-  actors: string;
-  trailer: string;
-}
+import { MovieDetail } from '../interfaces/Movie';
 
 const DetailMovie: React.FC = () => {    
-  const [movies, setMovies] = useState<DetailMovie | null>(null);
-  const [isLoading, setLoading] = useState<boolean>(true);
+  const [movies, setMovies] = useState<MovieDetail | null>(null);
   const { id } = useParams();
 
   const getMovies = async () => {
     try{
       const result = await axiosInstance.get(`/api/movies/${id}`);
       setMovies(result.data.data[0]);
-      setLoading(false);
     }catch(e){
-      setLoading(false);
+      throw new Error(`Error getting movies`);
     }
   }
 
@@ -37,16 +22,10 @@ const DetailMovie: React.FC = () => {
     getMovies();
   }, [id]);
 
-  if (!movies) {
-    return <div>No movie found</div>;
-  }
-
   return (
     <div>
       <Header/> 
-      {isLoading ? (
-        <Loading/>
-      ) : (
+      {movies ? (
         <div className="relative px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-8">
           <div className="grid gap-5 row-gap-10 lg:grid-cols-2">
             <div className="flex flex-col justify-center">
@@ -123,6 +102,8 @@ const DetailMovie: React.FC = () => {
             </div>
           </div>
         </div>
+        ) : (
+          <Loading/>        
       )}
     </div>
   )
