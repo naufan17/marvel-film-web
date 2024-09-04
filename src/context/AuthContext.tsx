@@ -1,6 +1,6 @@
 import React, { createContext, useState, ReactNode, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
-import { loginUser, logoutUser } from "../api/AuthApi";
+import { loginApi, logoutApi } from "../api/AuthApi";
 
 export interface AuthContextType {
   isAuthenticated: boolean;
@@ -30,7 +30,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const login = async (email: string, password: string) => {
     try {
-      const token = await loginUser(email, password);
+      const token = await loginApi(email, password);
       sessionStorage.setItem('token', token);
       setIsAuthenticated(true);
       navigate('/dashboard');
@@ -41,7 +41,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const logout = async () => {
     try {
-      await logoutUser();
+      await logoutApi();
       sessionStorage.removeItem('token');
       setIsAuthenticated(false);
       navigate('/');

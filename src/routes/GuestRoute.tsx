@@ -13,7 +13,7 @@ const GuestRoute: React.FC<GuestRouteProps> = ({ children }) => {
     return <Navigate to="/dashboard"/>;
   }
 
-  return <>{children}</>;
+  return <>{children}</>;  
 };
 
 export default GuestRoute;
