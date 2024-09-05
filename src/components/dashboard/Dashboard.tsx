@@ -24,7 +24,7 @@ const Dashboard: React.FC = () => {
       throw new Error('Data failed to be fetched')
     }
   }
-
+  
   useEffect(() => {
     if(hasMore){
       getMovies();

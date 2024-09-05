@@ -1,6 +1,7 @@
 import React, { createContext, useState, ReactNode, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../config/Api";
+
 export interface AuthContextType {
   isAuthenticated: boolean;
   login: (email: string, password: string) => void;
