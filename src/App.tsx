@@ -16,7 +16,7 @@ const App: React.FC = () => {
     <Router>
       <AuthProvider>
         <Routes>
-        <Route path={'/'} element={<Home/>}/>
+          <Route path={'/'} element={<Home/>}/>
           <Route path={'/:id'} element={<DetailMovie/>}/>
           <Route path={'/login'} element={<GuestRoute><Login/></GuestRoute>}/>
           <Route path={'/dashboard'} element={<ProtectRoute><Dashboard/></ProtectRoute>}/>
