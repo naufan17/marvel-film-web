@@ -21,6 +21,7 @@ const DetailMovie: React.FC<DetailMovieProps> = ({ id }) => {
 
   useEffect(() => {
     getMovies();
+    /* eslint-disable react-hooks/exhaustive-deps */
   }, []);
 
   return (

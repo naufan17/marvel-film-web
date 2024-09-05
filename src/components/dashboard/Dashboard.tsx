@@ -29,7 +29,8 @@ const Dashboard: React.FC = () => {
     if(hasMore){
       getMovies();
     }
-  }, [page]);
+  /* eslint-disable react-hooks/exhaustive-deps */
+}, [page]);
 
   const handleScroll = () => {
     if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {

@@ -14,6 +14,7 @@ const Logout: React.FC = () => {
 
   useEffect(() => {
     logoutUser()
+    /* eslint-disable react-hooks/exhaustive-deps */
   }, [])
 
   return null;

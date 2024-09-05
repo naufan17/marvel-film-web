@@ -30,6 +30,7 @@ const Home: React.FC = () => {
     if(hasMore){
       getMovies();
     }
+    /* eslint-disable react-hooks/exhaustive-deps */
   }, [page]);
 
   const handleScroll = () => {
