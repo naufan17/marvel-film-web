@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 const axiosInstance = Axios.create({
-	baseURL: "https://marvel-film-api.fly.dev",
+	baseURL: "http://localhost:8000",
 	withCredentials: true,
 	headers: {
 		"Content-Type": "application/json",

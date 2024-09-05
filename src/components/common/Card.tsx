@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface CardProps {
   id: number;
@@ -19,7 +20,12 @@ const Card: React.FC<CardProps> = ({ id, poster, title, year, plot }) => {
         <p className="text-sm text-gray-600 sm:text-base">
           {plot}
         </p>
-        <a href={`/${id}`} className="inline-flex items-center text-sm text-gray-800 sm:text-base font-semibold cursor-pointer">Learn more</a>
+        <Link
+          to={`/${id}`}
+          className="inline-flex items-center text-sm text-gray-800 sm:text-base font-semibold cursor-pointer"
+        >
+          Learn more
+        </Link>
       </div>
     </div>  
   );
