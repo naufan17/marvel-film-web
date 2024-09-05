@@ -16,12 +16,12 @@ const App: React.FC = () => {
     <Router>
       <AuthProvider>
         <Routes>
-          <Route path={'/'} element={<Home/>}/>
-          <Route path={'/:id'} element={<DetailMovie/>}/>
-          <Route path={'/login'} element={<GuestRoute><Login/></GuestRoute>}/>
-          <Route path={'/dashboard'} element={<ProtectRoute><Dashboard/></ProtectRoute>}/>
-          <Route path={'/create'} element={<ProtectRoute><CreateMovie/></ProtectRoute>}/>
-          <Route path={'/logout'} element={<ProtectRoute><Logout/></ProtectRoute>}/>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/:id' element={<DetailMovie/>}/>
+          <Route path='/login' element={<GuestRoute><Login/></GuestRoute>}/>
+          <Route path='/dashboard' element={<ProtectRoute><Dashboard/></ProtectRoute>}/>
+          <Route path='/create' element={<ProtectRoute><CreateMovie/></ProtectRoute>}/>
+          <Route path='/logout' element={<ProtectRoute><Logout/></ProtectRoute>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </AuthProvider>
