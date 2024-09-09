@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import axiosInstance from '../../config/Api';
-import Loading from '../common/Loading';
-import Card from '../common/Card';
-import { Movie } from '../../types/Movie';
+import axiosInstance from '../../../config/api';
+import Loading from '../../../components/common/Loading';
+import Card from '../../../components/common/Card';
+import { Movie } from '../../../types/Movie';
 
 const Home: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);

@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../components/layout/Header';
-import Main from '../components/login/Login';
+import Header from '../../components/layout/Header';
+import Main from './section/Login';
 
 const Login: React.FC = () => {
   return (

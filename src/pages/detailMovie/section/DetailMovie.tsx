@@ -1,7 +1,7 @@
 import React, { useState, useEffect, } from 'react';
-import Loading from '../common/Loading';
-import axiosInstance from '../../config/Api';
-import { MovieDetail } from '../../types/Movie';
+import Loading from '../../../components/common/Loading';
+import axiosInstance from '../../../config/api';
+import { MovieDetail } from '../../../types/Movie';
 
 interface DetailMovieProps {
   id?: string;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../components/layout/Header';
-import Main from '../components/detailMovie/DetailMovie';
+import Header from '../../components/layout/Header';
+import Main from './section/DetailMovie';
 
 const DetailMovie: React.FC = () => {  
   const { id } = useParams();

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import axiosInstance from '../../config/Api';
-import Loading from '../common/Loading';
-import List from '../common/List';
-import { Movie } from '../../types/Movie';
+import axiosInstance from '../../../config/api';
+import Loading from '../../../components/common/Loading';
+import List from '../../../components/common/List';
+import { Movie } from '../../../types/Movie';
 
 const Dashboard: React.FC = () => {
   const [movies, setMovies] = useState<Movie []>([]);
@@ -71,7 +71,9 @@ const Dashboard: React.FC = () => {
                 <th className="px-4 sm:px-6 py-3 sm:py-4 bg-slate-200 font-medium font-sans text-left text-sm sm:text-base text-gray-800 tracking-wider">
                   Year
                 </th>
-                <th className="px-4 sm:px-6 py-3 sm:py-4 bg-slate-200"></th>
+                <th className="px-4 sm:px-6 py-3 sm:py-4 bg-slate-200 font-medium font-sans text-left text-sm sm:text-base text-gray-800 tracking-wider">
+                  Action
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200">
