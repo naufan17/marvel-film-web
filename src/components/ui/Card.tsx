@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = ({ id, poster, title, year, plot }) => {
     <Link to={`/${id}`}>
       <div className="relative overflow-hidden transition duration-500 transform rounded-lg shadow-lg hover:-translate-y-2 hover:shadow-2xl">
         <img
-          className="object-cover w-full w-full h-auto"
+          className="object-cover w-full h-auto"
           src={poster}
         />
         <div className="absolute inset-0 px-3 py-3 sm:px-6 sm:py-6 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
