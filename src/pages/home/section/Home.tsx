@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../../config/api';
-import Loading from '../../../components/common/Loading';
-import Card from '../../../components/common/Card';
+import Loading from '../../../components/ui/Loading';
+import Card from '../../../components/ui/Card';
 import { Movie } from '../../../types/Movie';
 
 const Home: React.FC = () => {
@@ -48,8 +48,8 @@ const Home: React.FC = () => {
   return (
     <div>
       {movies ? (
-        <div className="relative px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-8">  
-          <div className="grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:max-w-sm sm:mx-auto md:max-w-full lg:max-w-full"> 
+        <div className="relative px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-12 lg:px-8 lg:py-8">  
+          <div className="grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"> 
             {movies.map((movie, index) => 
               <Card
                 key = {index}

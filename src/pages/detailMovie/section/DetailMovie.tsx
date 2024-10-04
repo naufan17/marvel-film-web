@@ -1,5 +1,5 @@
 import React, { useState, useEffect, } from 'react';
-import Loading from '../../../components/common/Loading';
+import Loading from '../../../components/ui/Loading';
 import axiosInstance from '../../../config/api';
 import { MovieDetail } from '../../../types/Movie';
 

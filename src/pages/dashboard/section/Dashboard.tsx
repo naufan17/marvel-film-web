@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../../config/api';
-import Loading from '../../../components/common/Loading';
-import List from '../../../components/common/List';
+import Loading from '../../../components/ui/Loading';
+import List from '../../../components/ui/List';
 import { Movie } from '../../../types/Movie';
 
 const Dashboard: React.FC = () => {
