@@ -12,7 +12,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ id, poster, title, year, plot }) => {
   return (
     <Link to={`/${id}`}>
-      <div className="relative overflow-hidden transition duration-500 transform rounded-lg shadow-lg hover:-translate-y-2 hover:shadow-2xl">
+      <div className="relative overflow-hidden transition duration-500 transform rounded-xl shadow-lg hover:-translate-y-2 hover:shadow-2xl">
         <img
           className="object-cover w-full h-auto"
           src={poster}

@@ -99,7 +99,7 @@ const DetailMovie: React.FC<DetailMovieProps> = ({ id }) => {
               </div>
             </div>
             <div>
-              <iframe className="object-cover w-full h-56 rounded-lg shadow-lg sm:h-96" src={movies.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe className="object-cover w-full h-56 rounded-xl shadow-lg sm:h-96" src={movies.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
           </div>
         </div>
